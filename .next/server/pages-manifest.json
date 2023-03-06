@@ -2,5 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/front-end-test": "pages/front-end-test.js"
+  "/back-end-test": "pages/back-end-test.js"
 }

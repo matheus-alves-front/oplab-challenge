@@ -2,6 +2,7 @@ import Image from 'next/image';
 import styles from '../styles/front-end-test.module.scss';
 import { Poppins } from 'next/font/google'
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const poppings = Poppins({weight: "400", subsets: ["latin"]})
 const poppingsTitle = Poppins({weight: "600", subsets: ["latin"]})
@@ -9,8 +10,30 @@ const poppingsTitle = Poppins({weight: "600", subsets: ["latin"]})
 export default function FrontEndTest() {
   return (
     <section className={`${styles.container} ${poppings.className}`}>
-      <div className={styles.columnImage} />
-      <div className={styles.columnContent}>
+      <motion.div 
+        className={styles.columnImage} 
+        initial={{
+          opacity: 0, 
+          x: '-100%'
+        }}
+        animate={{
+          opacity: 1,
+          x: 0
+        }}
+        transition={{duration: 1}}
+      />
+      <motion.div  
+        className={styles.columnContent}
+        initial={{
+          opacity: 0, 
+          y: '-100%'
+        }}
+        animate={{
+          opacity: 1,
+          y: 0
+        }}
+        transition={{duration: 1.5}}
+      >
         <Link 
           href={''}
         >
@@ -44,7 +67,7 @@ export default function FrontEndTest() {
           <Link href={''}>Twitter</Link>
           <Link href={''}>Instagram</Link>
         </footer>
-      </div>
+      </motion.div >
     </section>
   )
 }
